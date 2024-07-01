@@ -5,73 +5,84 @@ const categories = [
   {
     title: 'Westside',
     image: 'https://assets.tatacliq.com/medias/sys_master/images/51869107945502.jpg',
-    catagiry: 'womens'
+    category: 'womens'
   },
   {
     title: 'Womenswear',
     image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108011038.jpg',
-    catagiry: 'womens'
+    category: 'womens'
   },
   {
     title: 'Menswear',
     image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108076574.jpg',
-    catagiry: 'men'
-  },
-  {
-    title: 'Footwear',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108142110.jpg',
-    catagiry: 'footwear'
-  },
-  {
-    title: 'Beauty',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108207646.jpg',
-    catagiry: 'beauty'
-  },
-  {
-    title: 'Watches',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108273182.jpg',
-    catagiry: 'watches'
-  },
-  {
-    title: 'Jewellery',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108338718.jpg',
-    catagiry: 'jewellery'
-  },
-  {
-    title: 'Kids',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108404254.jpg',
-    catagiry: 'kids'
-  },
-  {
-    title: 'Gadgets',
-    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108469790.jpg',
-    catagiry: 'gadgets'
+    category: 'men'
   },
   {
     title: 'Home',
     image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108535326.jpg',
-    catagiry: 'Home'
+    category: 'Home'
+  },
+  {
+    title: 'Footwear',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108142110.jpg',
+    category: 'footwear'
+  },
+  {
+    title: 'Beauty',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108207646.jpg',
+    category: 'beauty'
+  },
+  {
+    title: 'Watches',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108273182.jpg',
+    category: 'watches'
+  },
+  {
+    title: 'Jewellery',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108338718.jpg',
+    category: 'jewellery'
+  },
+  {
+    title: 'Kids',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108404254.jpg',
+    category: 'kids'
+  },
+  {
+    title: 'Gadgets',
+    image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108469790.jpg',
+    category: 'gadgets'
   },
   {
     title: 'Bags',
     image: 'https://assets.tatacliq.com/medias/sys_master/images/51869108600862.jpg',
-    catagiry: 'bags'
+    category: 'bags'
   },
 ];
 
+const navigableCategories = ['Westside', 'Womenswear', 'Menswear', 'Kids', 'Home'];
+
 const CategoryCards = () => {
   const navigate = Imports.useNavigate();
+
+  const handleClick = (category) => {
+    if (navigableCategories.includes(category.title)) {
+      navigate(`/productpage?category=${category.category}`);
+    }
+  };
+
   return (
     <Imports.Grid container gap={2} justifyContent="center" sx={{ mt: 2 }}>
       {categories.map((category, index) => (
         <Imports.Grid key={index}>
-          <Imports.Card sx={{ width: { xs: 40, md: 120 }, height: { xs: 40, md: 120 }, borderRadius: 3 }}>
+          <Imports.Card 
+            sx={{ width: { xs: 40, md: 120 }, height: { xs: 40, md: 120 }, borderRadius: 3 }}
+            onClick={() => handleClick(category)}
+          >
             <Imports.CardMedia
               component="img"
               sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
               image={category.image}
               alt={category.title}
-              onClick={() => navigate(`/productpage?category=${category.catagiry}`)}
             />
           </Imports.Card>
         </Imports.Grid>
@@ -79,7 +90,7 @@ const CategoryCards = () => {
       <Imports.Grid sx={{ display: { xs: 'block', md: 'none' }, mt: 2 }}>
         <Imports.OfferCard />
       </Imports.Grid>
-      <Imports.Grid item xs={12} container sx={{ display: { xs: 'none', md: 'flex', marginTop: '20px', justifyContent: 'center', } }}>
+      <Imports.Grid item xs={12} container sx={{ display: { xs: 'none', md: 'flex', marginTop: '20px', justifyContent: 'center' } }}>
         <Imports.Grid item xs={11} gap={2} sx={{ display: 'flex' }}>
           <Imports.Grid item xs={4}>
             <img src='https://assets.tatacliq.com/medias/sys_master/images/50074650869790.jpg' alt='offer' style={{ maxWidth: '100%', height: 'auto' }} />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, {  useCallback } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import Imports from './Imports';
 
@@ -6,8 +6,8 @@ const Product = React.memo(({ category }) => {
   const dispatch = Imports.useDispatch();
   const navigate = Imports.useNavigate();
   const products = Imports.useSelector((state) => state.products);
-  const [loading, setLoading] = useState(true);
-  const [categorytype, setCategorytype] = useState({ type: "", innertype: "" });
+  const [loading, setLoading] = Imports.useState(true);
+  const [categorytype, setCategorytype] = Imports.useState({ type: "", innertype: "" });
   const token = localStorage.getItem('token');
 //Function for get products from api
   const fetchApiData = useCallback(async () => {
@@ -30,7 +30,7 @@ const Product = React.memo(({ category }) => {
     }
   }, [category, dispatch]);
 
-  useEffect(() => {
+  Imports.useEffect(() => {
     fetchApiData();
   }, []);
 //function for update the wishlist and add wishlist
@@ -106,6 +106,7 @@ const Product = React.memo(({ category }) => {
 
   return (
     <>
+      <Imports.Grid>
       <Imports.Grid sx={{ mt: { xs: 1, sm: 2, md: 5 } }}>
         <Imports.Typography sx={{ fontSize: { xs: "15px", md: "30px" }, fontWeight: "bold" }}>
           {categorytype.innertype} for {categorytype.type}&nbsp;
@@ -278,6 +279,7 @@ const Product = React.memo(({ category }) => {
             <Imports.Typography sx={{ borderLeft: "1px solid #f3e5f5", mr: { xs: 2, md: 2 }, paddingLeft: "2px", fontSize: { xs: "10px", md: "15px" } }}> Show More products</Imports.Typography>
           </Imports.Grid>
         </Imports.Grid>
+      </Imports.Grid>
       </Imports.Grid>
     </>
   );

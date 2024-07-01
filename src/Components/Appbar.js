@@ -98,7 +98,7 @@ const Navbar = React.memo(() => {
       {!token ? (
         <Imports.Button
           variant="contained"
-          sx={{ backgroundColor: 'red', borderRadius: '100px', ml: 5 }}
+          sx={{ backgroundColor: 'red', borderRadius: '100px', ml: 2 }}
           onClick={handleLoginClick}
         >
           login/signup

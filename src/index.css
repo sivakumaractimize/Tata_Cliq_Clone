@@ -92,7 +92,7 @@ margin-top: -5px !important;
   padding: 10px;
   position: absolute;
   top: 18px;
-  left: 92%;
+  left: 90%;
 
 
 }
@@ -102,7 +102,7 @@ margin-top: -5px !important;
   color: black !important;
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color:white;
 
   border-radius: 0% 50% 50% 0;
   position: absolute;
@@ -134,25 +134,23 @@ margin-top: -5px !important;
   .swiper1 .swiper-button-prev {
     position: absolute;
     top: 18px;
-    left: 73%;
+    left: 70%;
 
 
   }
   .swiper-button-prev,
-.swiper-button-next {
-  font-size: 5px;
-  color: rgba(12, 12, 19, 0.756) !important;
-  width: 10px !important;
-  height: 10px !important;
-  background-color: rgba(223, 219, 219, 0.8);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
- 
- 
-}
+  .swiper-button-next {
+    font-size: 5px;
+    color: rgba(12, 12, 19, 0.756) !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: rgba(207, 24, 24, 0.8);
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+  }
 .swiper-button-prev::after,
 .swiper-button-next::after {
   font-size: 10px !important;
@@ -166,7 +164,7 @@ margin-top: -5px !important;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px!important;
+  margin-top: 16px!important;
   margin-bottom: 15px !important;
   
 }
@@ -181,7 +179,7 @@ margin-top: -5px !important;
 
   .swiper1 .swiper-button-prev {
     position: absolute;
-    top: 18px;
+    top: 20px;
     left: 85%;
 
 
@@ -206,7 +204,7 @@ margin-top: -5px !important;
   .swiper1 .swiper-button-prev {
     position: absolute;
     top: 18px;
-    left: 88%;
+    left: 86%;
 
 
   }
