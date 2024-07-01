@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktatacliq=self.webpackChunktatacliq||[]).push([[53],{2927:(s,e,a)=>{a.r(e),a.d(e,{default:()=>t});a(5043);var r=a(4396),l=a(579);const t=()=>(0,l.jsxs)(l.Fragment,{children:[(0,l.jsx)(r.A.Navbar,{}),(0,l.jsxs)(r.A.Grid,{sx:{backgroundColor:"rgb(236,236,236)"},children:[(0,l.jsx)(r.A.TitleSwiper,{}),(0,l.jsx)(r.A.CardImages,{}),(0,l.jsx)(r.A.BlockbusterDeals,{}),(0,l.jsx)(r.A.Sealthedeals,{})]}),(0,l.jsx)(r.A.Footer,{})]})}}]);
+//# sourceMappingURL=53.56308d15.chunk.js.map
