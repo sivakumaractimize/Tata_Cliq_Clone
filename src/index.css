@@ -240,10 +240,10 @@ margin-top: -5px !important;
 
 .mySwiper1 .swiper-button-prev {
   font-size: 15px;
-  color: black !important;
-  width: 20px;
-  height: 20px;
-  background-color: rgb(205, 180, 180);
+  color: black ;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: rgb(232, 211, 211);
   border-radius: 50% 0 0 50%;
   
 
@@ -253,9 +253,9 @@ margin-top: -5px !important;
 .mySwiper1 .swiper-button-next {
   font-size: 5px;
   color: black !important;
-  width: 20px;
-  height: 20px;
-  background-color: rgb(206, 191, 191);
+  width: 20px !important;
+  height: 20px !important;
+  background-color: rgb(232, 211, 211);
 
   border-radius: 0% 50% 50% 0;
  
