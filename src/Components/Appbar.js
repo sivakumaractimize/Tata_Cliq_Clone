@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Imports from './Imports';
-
+import TemporaryDrawer from './SideDrawer';
 
 const Navbar = React.memo(() => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -9,7 +9,7 @@ const Navbar = React.memo(() => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null);
   const [hoverEffect, setHoverEffect] = useState(false);
   const [hoverEffectBrands, setHoverEffectBrands] = useState(false);
-  
+  const [drawerOpen, setDrawerOpen] = useState(false); 
   const [count, setCount] = useState(0);
   const [productCount, setProductCount] = useState(0);
   const [open, setOpen] = useState(false);
@@ -19,37 +19,28 @@ const Navbar = React.memo(() => {
 
   const isMobileView = Imports.useMediaQuery((theme) => theme.breakpoints.down('md'));
   const navigate = Imports.useNavigate();
-//function for mobile menu open
-  const handleToggle = useCallback(() => {
-    setMobileMenuOpen((prev) => !prev);
-  }, []);
 
-  const handleClose = useCallback(() => {
-    setAnchorEl(null);
-    setMobileMenuOpen(false);
-  }, []);
-// function for menu categories
+  const toggleDrawer = (newOpen) => () => {
+    setDrawerOpen(newOpen);
+  };
+
   const handleCategoriesClick = useCallback((event) => {
     setAnchorEl(event.currentTarget);
- 
     setHoverEffect(true);
   }, []);
 
   const handleCategoriesClose = useCallback(() => {
     setAnchorEl(null);
-  
     setHoverEffect(false);
   }, []);
 
   const handleBrandsClick = useCallback((event) => {
     setAnchorE2(event.currentTarget);
-   
     setHoverEffectBrands(true);
   }, []);
 
   const handleBrandsClose = useCallback(() => {
     setAnchorE2(null);
-  
     setHoverEffectBrands(false);
   }, []);
 
@@ -107,33 +98,33 @@ const Navbar = React.memo(() => {
 
       <Imports.MenuItem onClick={() => token && navigate('/myaccount')}>
         <Imports.AccountCircleOutlinedIcon />
-        <Imports.Typography sx={{ ml: 2,fontSize:'13px', fontWeight:'300' }}>My account</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>My account</Imports.Typography>
       </Imports.MenuItem>
 
       <Imports.MenuItem>
         <Imports.LocalMallOutlinedIcon />
-        <Imports.Typography sx={{ ml: 2, fontSize:'13px', fontWeight:'300'  }}>Order History</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>Order History</Imports.Typography>
       </Imports.MenuItem>
       <Imports.MenuItem>
         <Imports.FavoriteBorderTwoToneIcon />
-        <Imports.Typography sx={{ ml: 2,fontSize:'13px', fontWeight:'300' }}>My WishList</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>My WishList</Imports.Typography>
       </Imports.MenuItem>
       <Imports.MenuItem>
         <Imports.NotificationsNoneOutlinedIcon />
-        <Imports.Typography sx={{ ml: 2,fontSize:'13px', fontWeight:'300' }}>Alerts & Coupons</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>Alerts & Coupons</Imports.Typography>
       </Imports.MenuItem>
       <Imports.MenuItem>
         <Imports.CardGiftcardOutlinedIcon />
-        <Imports.Typography sx={{ ml: 2 ,fontSize:'13px', fontWeight:'300'}}>Gift card</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>Gift card</Imports.Typography>
       </Imports.MenuItem>
       <Imports.MenuItem>
         <Imports.AccountBalanceWalletTwoToneIcon />
-        <Imports.Typography sx={{ ml: 2,fontSize:'13px', fontWeight:'300' }}>CLIQ Cash</Imports.Typography>
+        <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>CLIQ Cash</Imports.Typography>
       </Imports.MenuItem>
       {token && (
         <Imports.MenuItem onClick={handleLogout}>
           <Imports.LogoutIcon />
-          <Imports.Typography sx={{ ml: 2 ,fontSize:'13px', fontWeight:'300'}}>Logout</Imports.Typography>
+          <Imports.Typography sx={{ ml: 2, fontSize: '13px', fontWeight: '300' }}>Logout</Imports.Typography>
         </Imports.MenuItem>
       )}
     </>
@@ -143,7 +134,7 @@ const Navbar = React.memo(() => {
     <Imports.AppBar position="sticky">
       <Imports.Grid container sx={{ justifyContent: 'center', backgroundColor: 'black', m: 0, p: 0 }}>
         <Imports.Grid item xs={12} sm={10} sx={{ display: 'flex', p: 0 }}>
-          <Imports.Grid item xs={2} sx={{ display: { xs: 'none', md: 'flex' }, mt: 3, ml:5 }}>
+          <Imports.Grid item xs={2} sx={{ display: { xs: 'none', md: 'flex' }, mt: 3, ml: 5 }}>
             <Imports.Link to="/">
               <img src="/Assets/Images/logo.png" alt="Tata Cliq Logo" style={{ height: '40px' }} />
             </Imports.Link>
@@ -220,8 +211,13 @@ const Navbar = React.memo(() => {
                       </Imports.Typography>
                     ) : (
                       <>
-                        <Imports.AccountCircleOutlinedIcon sx={{ fontSize: { md: '15px', lg: '17px', xl: '19px' },}} />
-                        <Imports.Typography onClick={handlePopoverOpen} sx={{ cursor: "pointer", ml: 2, fontSize: { md: '12px', lg: '14px', xl: '12px' },whiteSpace: 'nowrap', }}>{name}</Imports.Typography>
+                        <Imports.AccountCircleOutlinedIcon sx={{ fontSize: { md: '15px', lg: '17px', xl: '19px' } }} />
+                        <Imports.Typography
+                          onClick={handlePopoverOpen}
+                          sx={{ cursor: 'pointer', ml: 2, fontSize: { md: '12px', lg: '14px', xl: '12px' }, whiteSpace: 'nowrap' }}
+                        >
+                          {name}
+                        </Imports.Typography>
                         <Imports.KeyboardArrowDownOutlinedIcon />
                       </>
                     )}
@@ -251,19 +247,17 @@ const Navbar = React.memo(() => {
             <Imports.Grid sx={{ display: 'flex' }}>
               {isMobileView && (
                 <Imports.IconButton size="large" aria-label="menu" color="inherit">
-                  <Imports.MenuIcon onClick={handleToggle} />
+                  <Imports.MenuIcon onClick={toggleDrawer(true)} />
                 </Imports.IconButton>
               )}
               {isMobileView ? (
-                <Imports.Menu
-                  id="mobile-menu"
-                  anchorEl={anchorEl}
-                  open={mobileMenuOpen}
-                  onClose={handleClose}
-                  sx={{ position: 'absolute', top: { xs: '-110px', sm: '-180px' }, left: '-15px' }}
-                >
-                  {renderMenuItems()}
-                </Imports.Menu>
+                <TemporaryDrawer
+                  token={token}
+                  handleLoginClick={handleLoginClick}
+                  handleLogout={handleLogout}
+                  open={drawerOpen}
+                  toggleDrawer={toggleDrawer}
+                />
               ) : (
                 <>
                   <Imports.Typography
@@ -333,7 +327,12 @@ const Navbar = React.memo(() => {
                     <Imports.FavoriteBorderTwoToneIcon onClick={() => navigate('/wishlistpage')} />
                   </Imports.Badge>
                 </Imports.IconButton>
-                <Imports.IconButton size="large" aria-label="shopping cart" color="inherit" onClick={() => navigate('/addtobagpage')}>
+                <Imports.IconButton
+                  size="large"
+                  aria-label="shopping cart"
+                  color="inherit"
+                  onClick={() => navigate('/addtobagpage')}
+                >
                   <Imports.Badge color="error" badgeContent={productCount}>
                     <Imports.LocalMallOutlinedIcon />
                   </Imports.Badge>

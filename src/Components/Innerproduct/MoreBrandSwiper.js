@@ -16,9 +16,6 @@ const MoreBrandSwiper = () => {
     { img: "https://img.tatacliq.com/images/i18//437Wx649H/MP000000022450738_437Wx649H_202405311856021.jpeg" },
     { img: "https://img.tatacliq.com/images/i18//437Wx649H/MP000000022539730_437Wx649H_202406080816011.jpeg" }
   ];
-  // const isXs = useMediaQuery('(max-width:640px)');
-  // const isSm = useMediaQuery('(min-width:641px) and (max-width:768px)');
-  // const isMd = useMediaQuery('(min-width:769px) and (max-width:1024px)');
 
   return (
     <Swiper

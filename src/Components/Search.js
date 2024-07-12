@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [customTheme.breakpoints.up('320')]: {
-      width: '28ch',
+      width: '26ch',
       height:'2ch'
     },
     [customTheme.breakpoints.up('375')]: {
@@ -96,7 +96,7 @@ const SearchComponent = () => {
       <StyledInputBase
         placeholder={placeholders[placeholderIndex]}
         inputProps={{ 'aria-label': 'search' }}
-        sx={{ fontSize: { xs: '8px', sm: '15px', md: '15px', lg: '20px', xl: '17px' } }}
+        sx={{ fontSize: { xs: '8px', sm: '15px', md: '15px', lg: '20px', xl: '17px' }, mt:{xs:1} }}
       />
     </Search>
   );

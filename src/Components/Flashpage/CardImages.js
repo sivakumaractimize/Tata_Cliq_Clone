@@ -75,7 +75,7 @@ const CategoryCards = () => {
       {categories.map((category, index) => (
         <Imports.Grid key={index}>
           <Imports.Card 
-            sx={{ width: { xs: 40, md: 120 }, height: { xs: 40, md: 120 }, borderRadius: 3 }}
+            sx={{ width: { xs: 80, md: 120 }, height: { xs: 80, md: 120 }, borderRadius: 3 }}
             onClick={() => handleClick(category)}
           >
             <Imports.CardMedia
