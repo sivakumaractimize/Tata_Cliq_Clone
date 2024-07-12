@@ -5,7 +5,7 @@ import TemporaryDrawer from './SideDrawer';
 const Navbar = React.memo(() => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorE2, setAnchorE2] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null);
   const [hoverEffect, setHoverEffect] = useState(false);
   const [hoverEffectBrands, setHoverEffectBrands] = useState(false);
