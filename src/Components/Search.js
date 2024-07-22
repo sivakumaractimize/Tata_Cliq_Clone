@@ -91,7 +91,7 @@ const SearchComponent = () => {
   return (
     <Search>
       <SearchIconWrapper>
-        <SearchIcon />
+        <SearchIcon sx={{mt:1}} />
       </SearchIconWrapper>
       <StyledInputBase
         placeholder={placeholders[placeholderIndex]}

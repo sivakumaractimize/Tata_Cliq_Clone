@@ -1,15 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-
 import dayjs from 'dayjs';
 import Imports from './Imports';
+import { useMediaQuery } from '@mui/material';
 
 const ProfileDialog = ({ open, onClose }) => {
   const [firstName, setFirstName] = Imports.useState(localStorage.getItem('firstName') || '');
   const [lastName, setLastName] = Imports.useState(localStorage.getItem('lastName') || '');
-  const [selectedDate, setSelectedDate] =Imports.useState(null);
+  const [selectedDate, setSelectedDate] = Imports.useState(null);
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -31,27 +31,22 @@ const ProfileDialog = ({ open, onClose }) => {
     localStorage.setItem('lastName', lastName);
   }, [lastName]);
 
-  
-
   Imports.useEffect(() => {
     if (selectedDate) {
-      console.log(selectedDate);
       const dateOnly = dayjs(selectedDate).format('D/M/YYYY');
       localStorage.setItem('date', dateOnly);
-      console.log('date', dateOnly);
     }
   }, [selectedDate]);
-  
-  
-  
+
+  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
   return (
     <Imports.Grid>
       <Imports.Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
         <Imports.DialogTitle id="form-dialog-title">Basic Details</Imports.DialogTitle>
         <Imports.DialogContent>
-          <Imports.Grid container spacing={2}>
-            <Imports.Grid item xs={6}>
+          <Imports.Grid container spacing={2} direction={isSmallScreen ? 'column' : 'row'}>
+            <Imports.Grid item xs={12} sm={5}>
               <Imports.TextField
                 required
                 id="first-name"
@@ -62,7 +57,7 @@ const ProfileDialog = ({ open, onClose }) => {
                 fullWidth
               />
             </Imports.Grid>
-            <Imports.Grid item xs={6}>
+            <Imports.Grid item xs={12} sm={6}>
               <Imports.TextField
                 required
                 id="last-name"
@@ -73,7 +68,7 @@ const ProfileDialog = ({ open, onClose }) => {
                 fullWidth
               />
             </Imports.Grid>
-            <Imports.Grid item xs={12}>
+            <Imports.Grid item xs={12} sm={10}>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
                   label="Select Date of Birth"
@@ -84,9 +79,11 @@ const ProfileDialog = ({ open, onClose }) => {
               </LocalizationProvider>
             </Imports.Grid>
           </Imports.Grid>
-          <Imports.Button onClick={onClose} variant='contained' sx={{backgroundColor:'#DA1C5C', ml:30, mt:5}}>
-            Done
-          </Imports.Button>
+          <Imports.Grid container justifyContent="center" alignItems="center" sx={{ mt: 2 }}>
+            <Imports.Button onClick={onClose} variant='contained' sx={{ backgroundColor:'#DA1C5C' }}>
+              Done
+            </Imports.Button>
+          </Imports.Grid>
         </Imports.DialogContent>
       </Imports.Dialog>
     </Imports.Grid>

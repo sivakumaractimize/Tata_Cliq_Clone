@@ -120,9 +120,8 @@ const Product = React.memo(({ category }) => {
         </Imports.Grid>
       </Filtermenu>
       <Imports.Grid container xs={11} sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Imports.Grid sx={{ display: "flex", mt: 6, ml: { xs: 1, md: 12, lg: 18 }, fontSize: "12px" }}>
+        <Imports.Grid sx={{ display: "flex", mt: {xs:1, sm:6}, ml: { xs: 1, md: 12, lg: 18 }, fontSize: "12px" }}>
           <Imports.Typography sx={{ fontSize: "12px" }}>Home &gt; &nbsp;</Imports.Typography>
-          <Imports.Typography sx={{ fontSize: "12px" }}>{category} &gt; &nbsp;</Imports.Typography>
           <Imports.Typography sx={{ fontSize: "12px" }}>Ethenic Wear &gt; &nbsp;</Imports.Typography>{categorytype.type}
         </Imports.Grid>
         <Imports.Grid item xs={3} sm={4} md={3} sx={{ mb: 2, display: { xs: 'none', sm: 'block' } }}>
@@ -259,7 +258,7 @@ const Product = React.memo(({ category }) => {
             ))}
           </Imports.Grid>
 
-          <Imports.Grid xs={12} md={11} sx={{ display: "flex", justifyContent: "center", alignContent: "center", ml: { xs: 0, md: 4, lg: 38 }, mt: 2 }}>
+          <Imports.Grid xs={12} md={11} sx={{ display: "flex", justifyContent: "center", alignContent: "center", ml: { xs: 0,sm:10, md: 8, lg: 45 }, mt: 2 }}>
             <Imports.Grid sx={{ display: "flex", mt: 4 }}>
               <Imports.Grid>
                 <Imports.Grid sx={{ display: 'flex' }}>
@@ -269,12 +268,12 @@ const Product = React.memo(({ category }) => {
                 <Imports.Typography sx={{ fontSize: { xs: "10px", md: "13px", lg: "15px" } }}>This will Take 2 Minutes of Your Time</Imports.Typography>
               </Imports.Grid>
             </Imports.Grid>
-            <Imports.Grid sx={{ ml: { xs: 3, md: 5 }, display: { xs: "none", sm: "block" } }}>
+            <Imports.Grid sx={{ ml: { xs: 3, md: 10 }, display: { xs: "none", xl: "block" } }}>
               <img src='https://www.tatacliq.com/src/experience-score-feedback/images/banner.svg' alt='feedback banner' />
             </Imports.Grid>
-            <Imports.Typography sx={{ color: "#EB84A7", fontWeight: "bold", mt: 6, ml: { xs: 4, md: 2 }, fontSize: { xs: "10px", md: "12px", lg: "15px" } }}>Give Feedback</Imports.Typography>
+            <Imports.Typography sx={{ color: "#EB84A7", fontWeight: "bold", mt: 6, ml: { xs: 4,sm:7, md: 20,xl:4  }, fontSize: { xs: "10px", md: "12px", lg: "15px" } }}>Give Feedback</Imports.Typography>
           </Imports.Grid>
-          <Imports.Grid xs={10} md={11} sx={{ display: "flex", justifyContent: "space-between", alignContent: "center", ml: { xs: 0, md: 0, lg: 45 }, mt: 2, border: "1px solid #f3e5f5", padding: "10px" }}>
+          <Imports.Grid xs={10} md={11} sx={{ display: "flex", justifyContent: "space-between", alignContent: "center", ml: { xs: 0, sm:25, md: 28, lg: 45 }, mt: 2, border: "1px solid #f3e5f5", padding: "10px" }}>
             <Imports.Typography sx={{ borderBottom: "3px solid #bdbdbd", fontSize: { xs: "10px", md: "12px", lg: "15px" } }}>You've viewed 12/27763 products</Imports.Typography>
             <Imports.Typography sx={{ borderLeft: "1px solid #f3e5f5", mr: { xs: 2, md: 2 }, paddingLeft: "2px", fontSize: { xs: "10px", md: "15px" } }}> Show More products</Imports.Typography>
           </Imports.Grid>

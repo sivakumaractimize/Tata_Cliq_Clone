@@ -128,13 +128,55 @@ margin-top: -5px !important;
   margin-bottom: 20px !important;
   border: "1px solid red"!important;
 }
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 361px) {
 
   .swiper1 .swiper-button-prev {
     position: absolute;
     top: 18px;
     left: 70%;
+
+
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    font-size: 5px;
+    color: rgba(46, 46, 53, 0.756) !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: white;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+  }
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 10px !important;
+}
+.swiper1 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-color:"rgb(236,236,236)";
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px!important;
+  margin-bottom: 15px !important;
+  
+}
+
+
+}
+
+@media only screen and (min-width: 361px) and (max-width: 540px) {
+
+  .swiper1 .swiper-button-prev {
+    position: absolute;
+    top: 18px;
+    left: 76%;
 
 
   }
@@ -196,7 +238,7 @@ margin-top: -5px !important;
   
 
 }
-@media only screen and (min-width: 490px) and (max-width: 950px) {
+@media only screen and (min-width: 541px) and (max-width: 950px) {
 
   .swiper1 .swiper-button-prev {
     position: absolute;
@@ -262,8 +304,8 @@ margin-top: -5px !important;
 .mySwiper1 .swiper-button-prev {
   font-size: 15px;
   color: black ;
-  width: 20px !important;
-  height: 20px !important;
+  width: 35px !important;
+  height: 35px !important;
   background-color: rgb(232, 211, 211);
   border-radius: 50% 0 0 50%;
   
@@ -274,10 +316,41 @@ margin-top: -5px !important;
 .mySwiper1 .swiper-button-next {
   font-size: 5px;
   color: black !important;
-  width: 20px !important;
-  height: 20px !important;
+  width: 35px !important;
+  height: 35px !important;
   background-color: rgb(232, 211, 211);
 
   border-radius: 0% 50% 50% 0;
  
 }
+
+
+@media only screen and (max-width: 900px) {
+
+
+  .mySwiper1 .swiper-button-prev {
+    font-size: 5px;
+    color: black ;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: rgb(232, 211, 211);
+    border-radius: 50% 0 0 50%;
+    
+  
+  
+  }
+  
+  .mySwiper1 .swiper-button-next {
+    font-size: 5px;
+    color: black !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: rgb(232, 211, 211);
+  
+    border-radius: 0% 50% 50% 0;
+   
+  }
+
+
+}
+

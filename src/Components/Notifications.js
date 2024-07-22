@@ -18,7 +18,7 @@ const Notification = () => {
                 <Imports.Typography sx={{ p: 1, fontSize: '12px', textAlign: 'start' }}>To Ensure you do not miss order related updates, we willsend you sms alerts until your package is delivered .You will also recive alerts in case of delays /issues with your order</Imports.Typography>
             </Imports.Grid>
 
-            <Imports.Grid xs={10} sx={{ mt: 5, backgroundColor: "white" , display:'flex',justifyContent:"space-between", width:'100%',borderRadius:'10px'}}>
+            <Imports.Grid xs={10} sx={{ mt: 5,mb:2, backgroundColor: "white" , display:'flex',justifyContent:"space-between", width:'100%',borderRadius:'10px'}}>
 
                 <Imports.Typography sx={{ display: 'flex', justifyContent: 'center', p: 1,gap:1 }}>
                     <Imports.ChatOutlinedIcon />

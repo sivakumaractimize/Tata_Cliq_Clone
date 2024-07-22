@@ -18,8 +18,8 @@ const Myaccount = () => {
     const mail = localStorage.getItem('mail');
 
     return (
-        <Imports.Grid container sx={{ display: 'flex', backgroundColor: location.pathname === '/myaccount' ? 'white' : '#ECECEC' , mt:5}}>
-            <Imports.MenuGrid />
+        <Imports.Grid container sx={{ display: 'flex', backgroundColor: location.pathname === '/myaccount' ? 'white' : '#ECECEC' , mt:5,}}>
+            <Imports.MenuGrid  />
             <Imports.Grid item xs={12} md={3} sx={{ display: 'flex', justifyContent: "end", mt: { xs: 0, md: 5 } }}>
                 <Imports.Grid item xs={12} md={10} lg={8} textAlign="start" sx={{ display: { xs: 'none', md: 'block' }, borderRadius: '10px', backgroundColor: 'white' }}>
                     <Imports.Typography sx={{ fontSize: '15px', fontWeight: 'bold', ml: 2, mb: 2, mt:2 }}>Menu</Imports.Typography>
@@ -65,7 +65,7 @@ const Myaccount = () => {
                     </Imports.MenuItem>
                 </Imports.Grid>
             </Imports.Grid>
-            <Imports.Grid item xs={12} md={6} lg={6} sx={{ mt: 5 }}>
+            <Imports.Grid item xs={12} md={6} lg={7} sx={{ mt: 5 }}>
                 <Suspense fallback={<>loading</>}>
                     <Routes>
                         <Route path="/" element={<MyaccountMenu />} />
@@ -76,8 +76,8 @@ const Myaccount = () => {
                     </Routes>
                 </Suspense>
             </Imports.Grid>
-            <Imports.Grid item xs={12} md={3} lg={3} sx={{ display: { xs: 'none', md: 'block' }, mt: 10 }}>
-                <Imports.Paper sx={{ width: "60%" }}>
+            <Imports.Grid item xs={12} md={3} lg={2} sx={{ display: { xs: 'none', md: 'block' }, mt: 10 }}>
+                <Imports.Paper sx={{ width: "80%", ml:2 }}>
                     <Imports.Grid container sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: "center" }}>
                         <Imports.Avatar sx={{ bgcolor: "purple", width: "60px", height: '60px', mt:2 }}>S</Imports.Avatar>
                         <Imports.Typography sx={{ fontSize: '15px', fontWeight: 'bold', mt:2 }}>{fullName}</Imports.Typography>

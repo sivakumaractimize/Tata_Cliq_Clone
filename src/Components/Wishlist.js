@@ -127,7 +127,7 @@ const Wishlist = () => {
 
         {wishlist.length > 0 ? (
           <>
-            <Imports.Grid item xs={10}>
+            <Imports.Grid item xs={12} sm={10}>
               <Imports.Grid container gap={2} sx={{ justifyContent: "start" }}>
                 <Imports.Grid item>
                   <Imports.Button
@@ -194,7 +194,7 @@ const Wishlist = () => {
 
             <Imports.Grid container xs={12} sm={10} md={10} sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
               {filteredWishlist.map((product) => (
-                <Imports.Card key={product.id} sx={{ width: { xs: '48%', sm: '30%', md: '30%' , lg:"17%"}, margin: '1%', overflow: 'hidden' }}>
+                <Imports.Card key={product.id} sx={{ width: { xs: '65%', sm: '30%', md: '30%' , lg:"17%"}, margin: '1%', overflow: 'hidden', ml:{xs:'20%', sm:0} }}>
                   <Imports.Box sx={{ position: 'relative', width: '100%', height: '300px', overflow: 'hidden' }}>
                     <Imports.CardMedia
                       component="img"
@@ -244,7 +244,7 @@ const Wishlist = () => {
           <Imports.Grid item xs={12} sx={{ textAlign: 'center', mt: 5 , mb:30}}>
             <img src="https://www.tatacliq.com/src/account/components/img/emptyWishlist.svg" alt="svg"></img>
             <Imports.Typography variant="h6" color="textSecondary" sx={{mt:2}}>You have not added any products to your wishlist</Imports.Typography>
-            <Imports.Button variant="outlined" onClick={() => navigator('/')} sx={{ color: "#DA1C5C", borderColor: "#DA1C5C", fontWeight: "bold", fontSize:"10px", width: "12%", mt:2 }}>Continue Shopping</Imports.Button>
+            <Imports.Button variant="outlined" onClick={() => navigator('/')} sx={{ color: "#DA1C5C", borderColor: "#DA1C5C", fontWeight: "bold", fontSize:"10px", width: {xs:"50%",sm:"20%", lg:"12%"}, mt:2 }}>Continue Shopping</Imports.Button>
           </Imports.Grid>
         )}
       </Imports.Grid>

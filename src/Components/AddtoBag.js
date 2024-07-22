@@ -201,7 +201,7 @@ const AddtoBag = () => {
                                     <Imports.Divider sx={{ mt: 2, }} />
 
 
-                                    <Imports.Grid container sx={{ marginTop: 2, display: 'flex', justifyContent: 'end', mb: 1 }}>
+                                    <Imports.Grid xs={12} container sx={{ marginTop: 2, display: 'flex', justifyContent: 'end', mb: 1 }}>
 
                                         <Imports.Grid xs={6} md={6} lg={3} >
                                             <Imports.Typography
@@ -223,7 +223,7 @@ const AddtoBag = () => {
                                             </Imports.Typography>
                                         </Imports.Grid>
 
-                                        <Imports.Grid xs={3}>
+                                        <Imports.Grid xs={6} sm={3}>
 
                                             <Imports.Typography
                                                 variant='body2'

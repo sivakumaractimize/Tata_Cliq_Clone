@@ -18,10 +18,10 @@ const Profile = () => {
     };
 
     return (
-        <Imports.Grid xs={12} sm={11} md={11} sx={{ borderRadius: '5px', ml: { xs: 0, sm: 1, lg: 2 } , backgroundColor:'white'}}>
+        <Imports.Grid xs={12} sm={12} md={12} sx={{ borderRadius: '5px', ml: { xs: 0, sm: 1, lg: 2 } , backgroundColor:'white'}}>
             <Imports.ProfileDialog open={open} onClose={handleClose} />
-            <Imports.Grid xs={12} md={10} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                <Imports.Grid>
+            <Imports.Grid xs={12} md={12} sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', flexDirection: 'column' }}>
+                <Imports.Grid sx={{ml:2}} >
                     <Imports.Typography sx={{ textAlign: 'start', fontSize: '16px', fontWeight: 'bold' ,mt:2}}>General Information</Imports.Typography>
                     <Imports.Typography sx={{ fontSize: '12px', textAlign: 'start', mt: 2 }}>Personalize your profile by exploring the Public Profile section on our TATA Neu app/website</Imports.Typography>
                 </Imports.Grid>
@@ -31,7 +31,7 @@ const Profile = () => {
                         sx={{
                             display: "flex",
                             justifyContent: "space-between",
-                            ml: { xs: 0, sm: 6, md: 2, lg: 10 },
+                            ml: { xs: 0, sm: 2, md: 2, lg: 2 },
                             mt: 2
                         }}
                     >
@@ -40,7 +40,7 @@ const Profile = () => {
                     </Imports.Grid>
                 </Imports.Grid>
 
-                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 0, lg: 10 }, mt: 1, height: '30px', borderRadius: '5px' }}>
+                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 2, lg: 1 }, mt: 1, height: '30px', borderRadius: '5px' }}>
                     <Imports.Typography sx={{ display: "flex", justifyContent: 'space-between', ml: 1, mt: 2 }}>
                         First Name
                         <Imports.Typography sx={{ border: '1px solid #c4c1c0', width: { xs: '60%', sm: '80%', md: '70%', lg: '80%' }, textAlign: 'start', height: '30px', mr: 1, mb: 1, paddingTop: '2px',paddingLeft:'5px', borderRadius: '5px' }}>
@@ -66,7 +66,7 @@ const Profile = () => {
                         sx={{
                             display: "flex",
                             justifyContent: "space-between",
-                            ml: { xs: 0, sm: 6, md: 2, lg: 10 },
+                            ml: { xs: 0, sm: 2, md: 2, lg: 2 },
                             mt: 2
                         }}
                     >
@@ -75,7 +75,7 @@ const Profile = () => {
                     </Imports.Grid>
                 </Imports.Grid>
 
-                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 0, lg: 10 }, mt: 1, height: '30px', borderRadius: '5px' }}>
+                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 2, lg: 1 }, mt: 1, height: '30px', borderRadius: '5px' }}>
                     <Imports.Typography sx={{ display: "flex", justifyContent: 'space-between', ml: 1, mt: 2 }}>
                         Mobile No
                         <Imports.Typography sx={{ border: '1px solid #c4c1c0', width: { xs: '60%', sm: '80%', md: '70%', lg: '80%' }, textAlign: 'start', height: '30px', mr: 1, mb: 1, paddingTop: '2px', borderRadius: '5px',paddingLeft:'5px' }}>
@@ -95,7 +95,7 @@ const Profile = () => {
                         sx={{
                             display: "flex",
                             justifyContent: "space-between",
-                            ml: { xs: 0, sm: 6, md: 2, lg: 8 },
+                            ml: { xs: 0, sm: 2, md: 2, lg: 2 },
                             mt: 2
                         }}
                     >
@@ -103,14 +103,14 @@ const Profile = () => {
                         <Imports.Typography sx={{ color: '#DA1C5C', cursor: 'pointer' }}>Add</Imports.Typography>
                     </Imports.Grid>
                 </Imports.Grid>
-                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 0, lg: 10 }, mt: 1, height: '30px', borderRadius: '5px' }}>
+                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', ml: { xs: 0, sm: 2, lg: 1 }, mt: 1, height: '30px', borderRadius: '5px' }}>
                     <Imports.Typography sx={{ display: "flex", justifyContent: 'space-between', ml: 1, mt: 2 }}>
                         Gender
                         <Imports.Typography sx={{ border: '1px solid #c4c1c0', width: { xs: '60%', sm: '80%', md: '70%', lg: '80%' }, textAlign: 'start', height: '30px', mr: 1, mb: 1, paddingTop: '2px', borderRadius: '5px' }}>
                         </Imports.Typography>
                     </Imports.Typography>
                 </Imports.Grid>
-                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', display: 'flex', justifyContent: 'space-between', ml: { xs: 0, sm: 0, lg: 10 }, mt: 2, mb: 2, height: '30px', borderRadius: '5px' }}>
+                <Imports.Grid xs={11} sx={{ border: '1px solid #c4c1c0', width: '100%', display: 'flex', justifyContent: 'space-between', ml: { xs: 0, sm: 2, lg: 2 }, mt: 2, mb: 2, height: '30px', borderRadius: '5px' }}>
                     <Imports.Typography sx={{ p: 1, textAlign: 'start' }}>
                         Delete TATA CLiQ Account
                     </Imports.Typography>
