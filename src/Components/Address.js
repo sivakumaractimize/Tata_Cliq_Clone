@@ -7,7 +7,7 @@ const Address = () => {
             <Imports.Grid item xs={12} md={10} sx={{ backgroundColor:'white', textAlign: "start", borderRadius: '10px', p: 2 }}>
                 <Imports.Grid item sx={{ ml: 2, color: 'grey' }} >
                     <Imports.Typography sx={{ fontWeight: 'bold', color: 'black' }}>Siva Kumar V</Imports.Typography>
-                    <Imports.Typography>Mandapeta East Godavari</Imports.Typography>
+                    <Imports.Typography>Mandapeta Kakinadai</Imports.Typography>
                     <Imports.Typography>533308 IN</Imports.Typography>
                     <Imports.Typography>Ph.No : 7032514136</Imports.Typography>
                 </Imports.Grid>
