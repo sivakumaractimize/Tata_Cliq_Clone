@@ -3,19 +3,18 @@ import Dialog from '@mui/material/Dialog';
 import { styled } from '@mui/material/styles';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebaseauth';
-
 import Imports from './Imports';
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
         padding: theme.spacing(2),
-
     },
     '& .MuiDialogActions-root': {
         padding: theme.spacing(1),
     },
     '& .MuiPaper-root': {
         width: '600px',
-        borderRadius:"20px"
+        borderRadius: "20px"
     },
 }));
 
@@ -46,26 +45,15 @@ const LoginDialog = ({ open, onClose }) => {
             return;
         }
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);//authentication to firebase
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             localStorage.setItem('token', user.accessToken);
             localStorage.setItem('mail', user.email);
-            Imports.toast.success('login success..', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-                transition: Imports.Bounce,
-              });
-            console.log('Login successful:', user);
+            localStorage.setItem('displayName', user.displayName);
+
             handleClose();
         } catch (error) {
-            setError("Invalid email or password.");
-            console.error('Error logging in:', error);
+            setError(error.message);
         }
     };
 

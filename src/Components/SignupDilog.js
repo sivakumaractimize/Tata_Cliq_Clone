@@ -1,10 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
-
 import { auth } from '../Firebaseauth';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import Imports from './Imports';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -67,11 +65,15 @@ const SignupDialog = ({ open, onClose }) => {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
 
+                // Update user profile
+                await updateProfile(user, { displayName: `${firstName} ${lastName}` });
+
                 localStorage.setItem('firstName', firstName);
                 localStorage.setItem('lastName', lastName);
                 localStorage.setItem('mobile', mobile);
                 localStorage.setItem('token', user.accessToken);
                 localStorage.setItem('mail', user.email);
+                localStorage.setItem('displayName', user.displayName);
 
                 setSignupSuccess(true);
             } catch (error) {

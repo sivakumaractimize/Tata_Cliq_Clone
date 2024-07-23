@@ -70,6 +70,8 @@ const Wishlist = () => {
   
       // Delete the product from the wishlist using the wishid
       await Imports.deleteWishlist(wishid);
+      const updatedwishlist = wishlist.filter(wishlist => wishlist.wishid !== wishid);
+        dispatch(Imports.getWishlistSuccess(updatedwishlist));
   
       
       Imports.toast.error('Product Deleted From Wishlist', {
@@ -84,8 +86,8 @@ const Wishlist = () => {
         transition: Imports.Bounce,
       });
   
-      // Fetch the updated data to reflect the changes
-      fetchApiData();
+      
+     
     } catch (error) {
       console.error('Error deleting wishlist item:', error);
     }

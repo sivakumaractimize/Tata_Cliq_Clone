@@ -89,7 +89,8 @@ const AddtoBag = () => {
                 theme: "colored",
                 transition: Imports.Bounce,
             });
-            fetchProducts();
+            const Updatebag = products.filter(products => products.Bagid !== Bagid);
+        dispatch(Imports.getaddtobagSuccess(Updatebag));
         } catch (error) {
             console.error('Error deleting wishlist item:', error);
             Imports.toast.error('Error deleting product from bag', {
