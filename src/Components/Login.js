@@ -49,7 +49,7 @@ const LoginDialog = ({ open, onClose }) => {
             const user = userCredential.user;
             localStorage.setItem('token', user.accessToken);
             localStorage.setItem('mail', user.email);
-            localStorage.setItem('displayName', user.displayName);
+            localStorage.setItem('firstName', user.displayName);
 
             handleClose();
         } catch (error) {
