@@ -47,6 +47,7 @@ const LoginDialog = ({ open, onClose }) => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+            console.log("user",user)
             localStorage.setItem('token', user.accessToken);
             localStorage.setItem('mail', user.email);
             localStorage.setItem('firstName', user.displayName);

@@ -9,6 +9,7 @@ const InnerProduct = ({ product }) => {
 
   const handleImageClick = () => setOpenDialog(true);
   const handleCloseDialog = () => setOpenDialog(false);
+  const token = localStorage.getItem('token');
 
   const defaultImageURL = "https://t3.ftcdn.net/jpg/03/45/05/92/360_F_345059232_CPieT8RIWOUk4JqBkkWkIETYAkmz2b75.jpg";
 
@@ -21,7 +22,7 @@ const InnerProduct = ({ product }) => {
       const updatedProduct = { ...product, inwishlist: !product.inwishlist };
       await Imports.updateWishlist(category, product.mainid, updatedProduct);
 
-      if (!inwishlist) {
+      if (!inwishlist&&token ) {
         await Imports.addToWishlist(updatedProduct);
         Imports.toast('Product Added to Wishlist..!', {
           position: "top-right",
@@ -34,6 +35,21 @@ const InnerProduct = ({ product }) => {
           theme: "light",
           transition: Imports.Bounce,
         });
+      } 
+      else if(!token)
+      {
+        Imports.toast.error('Need User Sign in to add wishlist', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Imports.Bounce,
+        });
+      
       }
     } catch (error) {
       console.error("Error updating wishlist:", error);

@@ -14,7 +14,7 @@ const Myaccount = () => {
 //getting local storage data
     const firstname = localStorage.getItem('firstName');
     const lastname = localStorage.getItem('lastName');
-    const fullName = `${firstname} ${lastname}`;
+
     const mail = localStorage.getItem('mail');
 
     return (
@@ -80,7 +80,7 @@ const Myaccount = () => {
                 <Imports.Paper sx={{ width: "80%", ml:2 }}>
                     <Imports.Grid container sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: "center" }}>
                         <Imports.Avatar sx={{ bgcolor: "purple", width: "60px", height: '60px', mt:2 }}>S</Imports.Avatar>
-                        <Imports.Typography sx={{ fontSize: '15px', fontWeight: 'bold', mt:2 }}>{fullName}</Imports.Typography>
+                        <Imports.Typography sx={{ fontSize: '15px', fontWeight: 'bold', mt:2 }}>{firstname}</Imports.Typography>
                         <Imports.Typography sx={{ fontSize: '12px', mb: 5 }}>{mail}</Imports.Typography>
                     </Imports.Grid>
                 </Imports.Paper>
