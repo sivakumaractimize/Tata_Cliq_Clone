@@ -13,6 +13,15 @@ const Footer = () => {
         fontSize: '12px',
         marginBottom: '8px',
     };
+    const items = [
+        "Watches for Men", "Campus Shoes", "Sandals for Men", "Sneakers for Men", "Reebok Shoes",
+        "Cotton Kurtis", "Woodland Shoes", "Jumpsuits", "Allen Solly", "Sparx Shoes", "Gold Rings",
+        "Formal Shoes for Men", "Sports Shoes for Men", "Wallets for Men", "Ladies Watches",
+        "Trolley Bags", "Handbags for Women", "Sling Bags for Women", "Casual Shoes for Men",
+        "Boots for Men", "Digital Watches", "Sonata Watches", "Sneakers for Women", "Running Shoes",
+        "Puma Shoes", "Boots for Women", "Skechers", "Malabargold", "Fabindia", "Utsa", "Vark", "Gia",
+        "LOV", "Sitemap"
+    ];
 
     const sections = [
         {
@@ -67,7 +76,7 @@ const Footer = () => {
     // Function to handle scrolling and determine whether to show the button
     const handleScroll = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         const clientHeight = document.documentElement.clientHeight;
 
         if (scrollTop > clientHeight) {
@@ -101,9 +110,9 @@ const Footer = () => {
                 <img src='https://www.tatacliq.com/src/general/components/img/Frame22222.svg' alt='Frame' />
             </Imports.Grid>
 
-            <Imports.Grid container justifyContent="space-between" textAlign="start" sx={{ padding: '20px' }}>
+            <Imports.Grid container justifyContent="space-between" textAlign={{xs:'center', md:'start'}} sx={{ padding: '20px' }}>
                 {sections.map((section, index) => (
-                    <Imports.Grid item xs={6} sm={4} md={2} sx={{ ml: index === 0 ? { md: 10 } : 0 }} key={index}>
+                    <Imports.Grid item xs={12} sm={4} md={2} sx={{ ml: index === 0 ? { md: 10 } : 0 }} key={index}>
                         <Imports.Typography variant="h6" sx={headerStyle} marginBottom="20px">
                             {section.title}
                         </Imports.Typography>
@@ -115,13 +124,18 @@ const Footer = () => {
                     </Imports.Grid>
                 ))}
 
-                <Imports.Grid item xs={6} sm={12} md={4} sx={{ mr: { xs: 0, md: 10 } }}>
-                    <Imports.Typography component='div' variant="h6" sx={headerStyle} marginBottom="20px">
+                <Imports.Grid item xs={12} sm={12} md={4} justifyContent="space-between" textAlign={{xs:'center', md:'start'}} sx={{ mr: { xs: 0, md: 5 }, justifyContent:"space-between", textAlign:{xs:'center', sm:'start'} }}>
+                    <Imports.Typography textAlign={{xs:'center', md:'start'}} component='div' variant="h6" sx={headerStyle} marginBottom="20px">
                         Tata CLiQ Offerings
                     </Imports.Typography>
                     <Imports.Typography component='div' sx={bodyStyle}>
-                        <Imports.Grid sx={{ mr: { xs: 0, md: 15 } }}>
-                            Watches for Men | Campus Shoes | Sandals for Men | Sneakers for Men | Reebok Shoes | Cotton Kurtis | Woodland Shoes | Jumpsuits | Allen Solly | Sparx Shoes | Gold Rings | Formal Shoes for Men | Sports Shoes for Men | Wallets for Men | Ladies Watches | Trolley Bags | Handbags for Women | Sling Bags for Women | Casual Shoes for Men | Boots for Men | Digital Watches | Sonata Watches | Sneakers for Women | Running Shoes | Puma Shoes | Boots for Women | Skechers | Malabargold | Fabindia | Utsa | Vark | Gia | LOV | Sitemap
+                        <Imports.Grid sx={{ mr: { xs: 0, md: 1 }, textAlign: {xs:'center', md:'start'}, display: 'flex', flexWrap: 'wrap', justifyContent: {xs:'center', md:'start'} }}>
+                            {items.map((item, index) => (
+                                <Imports.Box key={index} sx={{ display: 'flex', alignItems: 'center', padding: '2px 2px', margin: '2px', border: '1px solid transparent' }}>
+                                    {item}
+                                    {index < items.length - 1 && <Imports.Box component="span" sx={{ mx: 1 }}>|</Imports.Box>}
+                                </Imports.Box>
+                            ))}
                         </Imports.Grid>
                     </Imports.Typography>
                 </Imports.Grid>
@@ -197,24 +211,24 @@ const Footer = () => {
             {/* Back to Top Button */}
             <Imports.Grid container direction="column" sx={{ mt: 2 }}>
 
-            
-            {showBackToTop && (
-                <Imports.IconButton
-                    sx={{
-                        position: 'fixed',
-                        bottom: '20px',
-                        right: '20px',
-                        backgroundColor: '#333',
-                        color: '#fff',
-                        zIndex: '9999'
-                    }}
-                    onClick={scrollToTop}
-                    aria-label="Back to Top"
-                >
-                    <Imports.MdKeyboardArrowUp />
-                </Imports.IconButton>
-            )}
-        </Imports.Grid>
+
+                {showBackToTop && (
+                    <Imports.IconButton
+                        sx={{
+                            position: 'fixed',
+                            bottom: '20px',
+                            right: '20px',
+                            backgroundColor: '#333',
+                            color: '#fff',
+                            zIndex: '9999'
+                        }}
+                        onClick={scrollToTop}
+                        aria-label="Back to Top"
+                    >
+                        <Imports.MdKeyboardArrowUp />
+                    </Imports.IconButton>
+                )}
+            </Imports.Grid>
         </Imports.Grid>
     );
 };

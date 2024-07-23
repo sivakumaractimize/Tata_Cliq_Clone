@@ -1,5 +1,6 @@
 import React from "react";
 import Imports from "./Imports";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const links = [
     { text: "Help & Service" },
@@ -11,13 +12,13 @@ const links = [
 
 const UsefulLinks = () => {
     return (
-        <Imports.Grid container direction="column" spacing={2}>
+        <Imports.Grid xs={10} container direction="column" spacing={2}>
             {links.map((link, index) => (
                 <Imports.Grid
                     key={index}
                     container
                     item
-                    xs={10}
+                    xs={6}
                     sx={{
                         color: 'gray',
                         mt: 2,
@@ -29,7 +30,7 @@ const UsefulLinks = () => {
                     }}
                 >
                     <Imports.Typography>{link.text}</Imports.Typography>
-                    <Imports.Typography>&gt;</Imports.Typography>
+                    <Imports.Typography><ChevronRightIcon/></Imports.Typography>
                 </Imports.Grid>
             ))}
         </Imports.Grid>

@@ -34,8 +34,8 @@ const BlockbusterDeals = () => {
             <Imports.Grid item key={index}>
                 <Imports.Card
                     sx={{
-                        width: { xs: 120, md: 400, lg:600 },
-                        height: { xs: 90, md: 300, lg:400 },
+                        width: { xs: 140, md: 400, lg:600 },
+                        height: { xs: 110, md: 300, lg:400 },
                         borderRadius: 5,
                         transition: 'transform 0.3s',
                         '&:hover': { transform: 'scale(1.01)' },

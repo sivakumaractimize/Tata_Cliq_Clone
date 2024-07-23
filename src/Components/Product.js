@@ -120,11 +120,11 @@ const Product = React.memo(({ category }) => {
         </Imports.Grid>
       </Filtermenu>
       <Imports.Grid container xs={11} sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Imports.Grid sx={{ display: "flex", mt: {xs:1, sm:6}, ml: { xs: 1, md: 12, lg: 18 }, fontSize: "12px" }}>
+        <Imports.Grid sx={{ display: "flex", mt: {xs:1, sm:2}, ml: { xs: 1, md: 12, lg: 18 }, fontSize: "12px" }}>
           <Imports.Typography sx={{ fontSize: "12px" }}>Home &gt; &nbsp;</Imports.Typography>
           <Imports.Typography sx={{ fontSize: "12px" }}>Ethenic Wear &gt; &nbsp;</Imports.Typography>{categorytype.type}
         </Imports.Grid>
-        <Imports.Grid item xs={3} sm={4} md={3} sx={{ mb: 2, display: { xs: 'none', sm: 'block' } }}>
+        <Imports.Grid item xs={3} sm={3} md={3} sx={{ mb: 1, display: { xs: 'none', sm: 'block' }, }}>
           <Imports.SortingDropdown />
         </Imports.Grid>
       </Imports.Grid>
